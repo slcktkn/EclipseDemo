@@ -3,19 +3,23 @@ public class User {
 	private int id;
 	private int userId;
 	private String userName;
-	private byte[] password;
+	private byte[] passwordHash;
+	private byte[] passwordSalt;
 	private String email;
+	private boolean status;
 	
 	public User() {
 		System.out.println("User was requested");
 	}
-	public User(int id, int userId, String userName, byte[] password, String email) {
+	public User(int id, int userId, String userName, byte[] passwordHash, byte[] passwordSalt, String email, boolean status) {
 		super();
 		this.id = id;
 		this.userId = userId;
 		this.userName = userName;
-		this.password = password;
+		this.passwordHash = passwordHash;
+		this.passwordSalt = passwordSalt;
 		this.email = email;
+		this.status = status;
 	}
 	
 	public int getId() {
@@ -36,11 +40,17 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public byte[] getPassword() {
-		return password;
+	public byte[] getPasswordHash() {
+		return passwordHash;
 	}
-	public void setPassword(byte[] password) {
-		this.password = password;
+	public void setPasswordHash(byte[] passwordHash) {
+		this.passwordHash = passwordHash;
+	}
+	public byte[] getPasswordSalt() {
+		return passwordSalt;
+	}
+	public void setPasswordSalt(byte[] passwordSalt) {
+		this.passwordSalt = passwordSalt;
 	}
 	public String getEmail() {
 		return email;
@@ -48,5 +58,11 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public Boolean getStatus() {
+		return status;
+	}
+	
+	
 
 }
